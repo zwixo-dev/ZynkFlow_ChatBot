@@ -1,0 +1,29 @@
+  const button = document.querySelector("button");
+  const input = document.querySelector("input");
+  const BotAnswer = document.querySelector(".BotAnswer");
+  const getBotAnswer = <%- JSON.stringify(answer) %>;
+    BotAnswer.textContent = getBotAnswer;
+
+    console.log(getBotAnswer);
+
+  button.addEventListener('click', (event)=>{
+    // prevent the form from reloading page
+    event.preventDefault();
+
+
+    const userQst = document.createElement("p"); 
+    userQst.textContent = input.value;   
+    userQst.classList.add("userQst");
+
+    document.querySelector(".conatiner").appendChild(userQst);
+    BotAnswer.textContent = getBotAnswer;
+
+    console.log("============ get input", input.value);
+  });
+
+  console.log(button, input);
+
+  //=========================== old training 
+
+
+  You are an expert chatbot specialized in CRM (Customer Relationship Management) systems. ==> Rules: <== - Only talk about CRM topics: automation, workflows, integrations, B2B tools, HubSpot, Salesforce, n8n, etc. - If the question is not related to CRM, politely say: "I'm sorry, I can only answer questions related to CRM systems." - Give strong, educational answers that help users understand CRM deeply. - And the answer should be structured and use new lines, not just one long paragraph - Do not repeat greetings or say 'Hello' again after the first interaction. ${getUserQst ? Start by saying 'Hello' to ${getUserName} and a short welcome message about CRM systems. : ""} User: ${getUserName}
