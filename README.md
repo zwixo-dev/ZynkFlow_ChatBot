@@ -54,4 +54,4 @@ To install the required dependencies, run the following command:
 ```bash
 -> npm i
 
--> nodmon index.js
+-> nodemon index.js
